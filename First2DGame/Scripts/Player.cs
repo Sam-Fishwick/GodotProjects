@@ -6,7 +6,7 @@ public partial class Player : Area2D
 	public delegate void HitEventHandler();
 
 	[Export] // export custom Speed property to Godot GUI
-	public int Speed { get; set; } = 400;
+	public int Speed { get; set; } = 250;
 
 	public Vector2 ScreenSize;
 
