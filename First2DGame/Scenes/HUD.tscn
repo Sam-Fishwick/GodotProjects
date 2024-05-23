@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx2cvsuxdukd0"]
+[gd_scene load_steps=7 format=3 uid="uid://bx2cvsuxdukd0"]
 
 [ext_resource type="FontFile" uid="uid://d2pvo12nvspmg" path="res://fonts/Xolonium-Regular.ttf" id="1_g41dy"]
 [ext_resource type="Script" path="res://Scripts/HUD.cs" id="1_mn5no"]
@@ -8,6 +8,10 @@ action = &"StartGame"
 
 [sub_resource type="Shortcut" id="Shortcut_ljmkm"]
 events = [SubResource("InputEventAction_7gc4l")]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqjyf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgaha"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_mn5no")
@@ -69,6 +73,36 @@ text = "Start"
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="TouchScreen" type="Node" parent="."]
+
+[node name="TouchLeft" type="TouchScreenButton" parent="TouchScreen"]
+position = Vector2(83.0001, 359)
+scale = Vector2(8.29107, 35.8713)
+shape = SubResource("RectangleShape2D_jqjyf")
+passby_press = true
+action = "MoveLeft"
+
+[node name="TouchUp" type="TouchScreenButton" parent="TouchScreen"]
+position = Vector2(238, 128)
+scale = Vector2(23.76, 12.76)
+shape = SubResource("RectangleShape2D_cgaha")
+passby_press = true
+action = "MoveUp"
+
+[node name="TouchDown" type="TouchScreenButton" parent="TouchScreen"]
+position = Vector2(238, 590)
+scale = Vector2(23.76, 12.76)
+shape = SubResource("RectangleShape2D_cgaha")
+passby_press = true
+action = "MoveDown"
+
+[node name="TouchRight" type="TouchScreenButton" parent="TouchScreen"]
+position = Vector2(393, 359)
+scale = Vector2(8.29107, 35.8713)
+shape = SubResource("RectangleShape2D_jqjyf")
+passby_press = true
+action = "MoveRight"
 
 [connection signal="pressed" from="StartButton" to="." method="OnStartButtonPressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="OnMessageTimerTimeout"]
