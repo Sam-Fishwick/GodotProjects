@@ -1,10 +1,11 @@
 # Godot 4+ specific ignores
 .godot/
 .import/
-export.cfg
-export_presets.cfg
+*/export.cfg
+*/export_presets.cfg
 data_*/
 dist/
+Builds/
 *.vs
 *.tmp
 *blend1

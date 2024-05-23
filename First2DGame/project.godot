@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 window/size/viewport_width=480
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
+window/handheld/orientation=5
 
 [dotnet]
 
@@ -62,6 +63,11 @@ StartGame={
 ]
 }
 
+[input_devices]
+
+pointing/handheld/orientation=0
+
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
