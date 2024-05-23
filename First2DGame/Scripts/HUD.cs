@@ -8,6 +8,7 @@ public partial class HUD : CanvasLayer
     public override void _Ready()
     {
         GD.Print("HUD: _Ready called!");
+        GetNode<CanvasLayer>("TouchScreen/UI").Hide();
     }
 
     public override void _Process(double delta)
@@ -54,6 +55,9 @@ public partial class HUD : CanvasLayer
     {
         GD.Print("HUD: Start Button pressed!");
         GetNode<Button>("StartButton").Hide();
+
+        GetNode<CanvasLayer>("TouchScreen/UI").Show();
+
         GD.Print("HUD: StartGame signal emitted!");
         EmitSignal(SignalName.StartGame);
     }
